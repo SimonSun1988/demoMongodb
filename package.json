@@ -1,0 +1,30 @@
+{
+  "name": "demoMongodb",
+  "version": "0.0.1",
+  "description": "Hackathon Taiwan Mongodb Demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SimonSun1988/demoMongodb.git"
+  },
+  "keywords": [
+    "Mongodb",
+    "Hackathon",
+    "Taiwan",
+    "Hackathon",
+    "Taiwan",
+    "Demo"
+  ],
+  "author": "Simon Sun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SimonSun1988/demoMongodb/issues"
+  },
+  "homepage": "https://github.com/SimonSun1988/demoMongodb",
+  "dependencies": {
+    "mongodb": "^2.0.33"
+  }
+}
