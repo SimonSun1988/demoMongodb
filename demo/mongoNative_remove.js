@@ -25,7 +25,7 @@ MongoClient.connect('mongodb://localhost:27017/demo' , function(err, db) {
     // 連到 user 這個 collection
     var user = db.collection('user');
 
-    // bash command 的第二與第三個參數
+    // bash command 的第二參數
     var name = process.argv[2];
 
     user.remove({ name: name }, function (err, removedUser){
