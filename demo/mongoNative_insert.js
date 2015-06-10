@@ -2,6 +2,7 @@
  * 在 node.js 使用 mongodb 的 module
  */
 var MongoClient = require('mongodb').MongoClient;
+var myName = process.argv[2];
 
 
 /*
@@ -25,18 +26,25 @@ MongoClient.connect('mongodb://localhost:27017/demo' , function(err, db) {
     // 連到 user 這個 collection
     var user = db.collection('user');
 
+    user.insert({ 'name': myName }, {w: 1}, function (err, newUser){
 
-    // 找出 user 這個 collection 所有資料
-    user.find({}).toArray(function (err, docs){
-
-        // 「錯誤處理」 - 如果查詢資料庫發生錯誤，就會噴出錯誤
         if(err){
-            console.log('查詢資料發生錯誤了 : ' + err);
+            console.log('新增資料發生錯誤了 : ' + err);
             process.exit();
         }
 
-        console.log(docs);
+        user.find({}).toArray(function (err, users){
 
-        process.exit();
+            // 「錯誤處理」 - 如果查詢資料庫發生錯誤，就會噴出錯誤
+            if(err){
+                console.log('查詢資料發生錯誤了 : ' + err);
+                process.exit();
+            }
+
+            console.log(users);
+            process.exit();
+
+        });
     });
+
 });
