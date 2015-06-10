@@ -2,7 +2,6 @@
  * 在 node.js 使用 mongodb 的 module
  */
 var MongoClient = require('mongodb').MongoClient;
-var myName = process.argv[2];
 
 
 /*
@@ -19,31 +18,35 @@ MongoClient.connect('mongodb://localhost:27017/demo' , function(err, db) {
 
 
     // 如果成功連線，會跳出連線成功的訊息
-    console.log("成功連線");
+    console.log('成功連線');
 
 
 
     // 連到 user 這個 collection
     var user = db.collection('user');
 
-    user.insert({ 'name': myName }, {w: 1}, function (err, newUser){
+    // bash command 的第三個參數
+    var name = process.argv[2];
+
+    user.insert({ 'name': name }, {w: 1}, function (err, newUser){
 
         if(err){
             console.log('新增資料發生錯誤了 : ' + err);
             process.exit();
         }
 
-        user.find({}).toArray(function (err, users){
+        console.log('新增資料成功');
+
+        // 找出 user 這個 collection 所有資料
+        user.find({}).toArray(function (err, docs){
 
             // 「錯誤處理」 - 如果查詢資料庫發生錯誤，就會噴出錯誤
             if(err){
                 console.log('查詢資料發生錯誤了 : ' + err);
                 process.exit();
             }
-
-            console.log(users);
+            console.log(docs);
             process.exit();
-
         });
     });
 
