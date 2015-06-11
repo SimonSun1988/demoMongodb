@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/SimonSun1988/demoMongodb",
   "dependencies": {
-    "mongodb": "^2.0.33"
+    "mongodb": "^2.0.33",
+    "mongoose": "^4.0.5"
   }
 }
