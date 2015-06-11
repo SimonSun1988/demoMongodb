@@ -3,6 +3,15 @@
  */
 var MongoClient = require('mongodb').MongoClient;
 
+if(!process.argv[2]){
+    console.log('需要傳入一個參數當作查詢名字喲');
+    process.exit();
+}
+
+if(!process.argv[3]){
+    console.log('需要傳入一個參數當作修改的名字喲');
+    process.exit();
+}
 
 /*
  * 連線到自己電腦的 mongodb, 資料庫名稱叫做 demo
