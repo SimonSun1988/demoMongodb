@@ -6,7 +6,7 @@ if(!process.argv[2]){
     process.exit();
 }
 
-if(!process.argv[2]){
+if(!process.argv[3]){
     console.log('需要傳入一個參數當作更新的名字喲');
     process.exit();
 }

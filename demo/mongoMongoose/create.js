@@ -13,8 +13,11 @@ User.create({ name: name }, function (err, newUser){
 
     if(err){
         console.log('創造資料時發生錯誤 : ' + err);
+        process.exit();
     }
 
     console.log(newUser);
     process.exit();
 });
+
+
