@@ -1,5 +1,5 @@
 
-// 引用我們已經寫好的 userModel.js
+// 引用寫好的 User Models
 var User = require('./userModel');
 
 

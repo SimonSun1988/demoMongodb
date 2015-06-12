@@ -1,8 +1,9 @@
-// 引用我們已經寫好的 userModel.js
+
+// 引用寫好的 User Models
 var User = require('./userModel');
 
 if(!process.argv[2]){
-    console.log('需要傳入一個參數當作查詢的名字喲');
+    console.log('需要傳入一個參數當作查詢條件唷');
     process.exit();
 }
 

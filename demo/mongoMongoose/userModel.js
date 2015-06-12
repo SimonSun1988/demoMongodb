@@ -18,7 +18,7 @@ var UserSchema = new Schema({
     name: String
 });
 
-// 將 Schema 實體化
+// 將 Schema 實體化成 User Model
 var User = mongoose.model('User', UserSchema);
 
 module.exports = User;

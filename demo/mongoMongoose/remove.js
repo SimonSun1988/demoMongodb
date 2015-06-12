@@ -1,13 +1,13 @@
-// 引用我們已經寫好的 userModel.js
+
+// 引用寫好的 User Models
 var User = require('./userModel');
 
 if(!process.argv[2]){
-    console.log('需要傳入一個參數當作被刪除的名字喲');
+    console.log('需要傳入一個參數當作刪除的條件喔');
     process.exit();
 }
 
 var name = process.argv[2];
-
 
 User.findOne({ name: name }, function (err, user){
 
